@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮变化</title>
+    <style>
+        span{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>1994年 <span>Netscape</span>发布 Navigator 1.0版本之后很快发现，浏览器需要一种嵌入网页的脚本语言，用来<span>控制浏览器行为</span>。</p>
+        <p>当时的网速很慢，有些操作不适合在服务端完成。</p>
+        <p>所以需要一个脚本语言满足这几个条件：<span>功能简单</span>、<span>语法简单</span>、<span>容易学习</span>、<span>容易部署</span>。</p>
+        <p>Navigator决定开发一个接近于Java的<span>轻量级</span>脚本语言，于是<span>JavaScript</span>就这么诞生了。</p>
+        <p>但值得注意的是<span>JavaScript</span>和Java之间并没有关系</p>
+        <button id="change">变色按钮</button>
+    </div>
+    <script>
+        let Change = document.querySelector("#change");
+        var i=0;
+        let handleClick = () => {
+            let spanList = document.querySelectorAll("span")
+            i++;
+            if(i%2==0){
+            spanList.forEach(arr => arr.style.backgroundColor = "black");
+            }else{
+            spanList.forEach(arr => arr.style.backgroundColor = "#ffffff");
+            }
+        }
+        Change.addEventListener("click",handleClick);
+    </script>
+</body>
+</html>
